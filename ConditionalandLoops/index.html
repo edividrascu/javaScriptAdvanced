@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ponga su puesto de trabajo</h1>
+    <form id="salaryForm">
+        <label for="puesto">escoja su puesto:</label>
+        <select id="puesto" name="puesto">
+            <option value="director general">director general</option>
+            <option value="gerente">gerente</option>
+            <option value="cto">cto</option>
+            <option value="promotor">promotor</option>
+            <option value="predeterminado" selected>predeterminado</option>
+        </select> 
+        <button type="submit">submit</button>
+    </form>
+
+    <div id="resultadoSalario"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
