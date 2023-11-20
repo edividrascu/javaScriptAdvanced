@@ -6,15 +6,21 @@
 
 
 
-function uncompletedNotes(notes) {    //creamos una funcion
-  const uncompletedTodos = [];       // hacemos un array vacio
+function uncompletedNotes(notes) {
+  const uncompletedNotesArray = [];
 
-  notes.forEach((note) => {          //recorremos el array notes
-    const notCompleted = note.todos.filter((todo) => !todo.done); // filtramos el array
-    uncompletedTodos.push(...notCompleted);                       // lo guardamos en el array vacio
+  notes.forEach((note) => {
+    const uncompletedTodos = note.todos.filter((todo) => !todo.done);
+
+    if (uncompletedTodos.length > 0) {
+      uncompletedNotesArray.push({
+        ...note,
+        todos: uncompletedTodos,
+      });
+    }
   });
 
-  console.log(uncompletedTodos)                                      
+  console.log(uncompletedNotesArray);
 }
 
 const notes = [
@@ -67,5 +73,4 @@ const notes = [
   },
 ];
 
-uncompletedNotes(notes);                      
-
+uncompletedNotes(notes);
