@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+
+    <script>
+      async function fetchData() {
+        const apiUrl = 'https://jsonplaceholder.typicode.com/todos/4';
+
+        try {
+          const response = await fetch(apiUrl);
+
+          if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          return data;  // Devolver los datos obtenidos de la API
+        } catch (error) {
+          console.error('Error en la solicitud:', error);
+        }
+      }
+
+      async function htmlDatos() {
+        try {
+          // Llamar a la función para obtener los datos
+          const data = await fetchData();
+
+          // Obtener el div por su ID
+          let div = document.getElementById("container");
+
+          // Crear un elemento h2 para el título del Todo
+          let h2 = document.createElement("h2");
+          h2.textContent = "Title: " + data.title;
+
+          // Crear un elemento checkbox
+          let checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = data.completed;
+
+          // Agregar el h2 y el checkbox al div
+          div.appendChild(h2);
+          div.appendChild(checkbox);
+        } catch (error) {
+          console.error('Error al mostrar datos:', error);
+        }
+      }
+
+      // Llamar a la función para mostrar los datos
+      htmlDatos();
+    </script>
+  </body>
+</html>
