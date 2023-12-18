@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+ // Obtener todas las etiquetas y campos input dentro del formulario
+ let labels = document.querySelectorAll('form label');
+      let inputs = document.querySelectorAll('.form-input'); 
+
+// Asi podemos iterar sobre los elementos y concatenar uno con otro
+for (let i = 0; i < labels.length; i++) {
+  console.log(labels[i].textContent + " " + inputs[i].value);
+}
+</script>
