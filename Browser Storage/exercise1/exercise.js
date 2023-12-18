@@ -1,11 +1,11 @@
-// const user = {
-//   id: 1,
-//   name: "John",
-//   age: 25,
-// };
+const user = {
+  id: 1,
+  name: "John",
+  age: 25,
+};
 
-// localStorage.setItem("user", JSON.stringify(user));
-//al parecer una vez guardado aun que se borre seguira alli 
+ localStorage.setItem("user", JSON.stringify(user));
+
 
 const getUser = JSON.parse(localStorage.getItem("user"));
 console.log(getUser);
